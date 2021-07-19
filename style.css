@@ -1,0 +1,91 @@
+body {
+  background: black;
+  font-family: 'Source Code Pro', Courier, monospace;
+  font-weight: 200;
+}
+
+section {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+nav {
+
+  position: absolute;
+  top: 1em;
+  left: 1em;
+}
+
+button, a {
+  border: none;
+  background: none;
+  color: white;
+  opacity: 0.5;
+  font-family: 'Source Code Pro', Courier, monospace;
+  font-weight: 200;
+  font-size: 1em;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+button:hover {
+  opacity: 1.0;
+}
+
+.current {
+  opacity: 1.0 !important;
+}
+
+#prev {
+  visibility: hidden;
+}
+
+
+.chap-button {
+  visibility: hidden;
+}
+
+.text-button {
+  opacity: 0.5;
+}
+
+.text-button.on, .text-button:hover {
+  opacity: 1.0;
+}
+
+img {
+  width: 75%;
+  display: none;
+  box-shadow: 0 0 20px 10px rgb(0 0 0 / 20%);
+}
+
+#text {
+  color: white;
+  font-size: 3em;
+  width: 60%;
+  display: none;
+  text-align: center;
+}
+
+.white-fade {
+  animation: white-fade-anim 70s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+.black-fade {
+  animation: black-fade-anim 50s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+@keyframes white-fade-anim {
+  from {background-color: black;}
+  to {background-color: white;}
+}
