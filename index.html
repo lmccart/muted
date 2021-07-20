@@ -9,7 +9,9 @@
     <meta property='og:url' content='https://www.sitepoint.com/a-basic-html5-template/'>
     <meta property='og:description' content='A simple HTML5 Template for new projects.'>
     <meta property='og:image' content='image.png'>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;600&amp;display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap" rel="stylesheet">
     <link rel='icon' href='/favicon.ico'>
     <link rel='stylesheet' href='style.css?v=1.0'>
     <title> </title>
@@ -23,20 +25,24 @@
     </section>
     <section id='text-container'>
       <div id='text'>Encased in a white chat box with black monotype text is a statement “I think one day we will be able to go outside again.”</div>
+      <button id='start'>Start</button>
     </section>
     <audio id='audio'></audio>
     <nav>
-      <button id='prev'>←</button>
-      <button id='chap0' class='chap-button'>·</button>
-      <button id='chap1' class='chap-button'>·</button>
-      <button id='chap2' class='chap-button'>·</button>
-      <button id='chap3' class='chap-button'>·</button>
-      <button id='chap4' class='chap-button'>·</button>
-      <button id='next'>→</button>
-      <button id='toggleCaptions' class='text-button'>Captions</button>
+      <div id='chap-buttons' style='display:none'>
+        <button id='prev'>←</button>
+        <button id='chap0' class='chap-button'>·</button>
+        <button id='chap1' class='chap-button'>·</button>
+        <button id='chap2' class='chap-button'>·</button>
+        <button id='chap3' class='chap-button'>·</button>
+        <button id='chap4' class='chap-button'>·</button>
+        <button id='next'>→</button>
+      </div>
       <a href='https://spotify.com/' target='_blank' class='text-button'>Audio</a>
       <a href='/text' target='_blank' class='text-button'>Text</a>
+      <a href='/credits' class='text-button'>Credits</a>
     </nav>
+
 
     <script src='main.js'></script>
   </body>

@@ -1,7 +1,8 @@
 body {
   background: black;
-  font-family: 'Source Code Pro', Courier, monospace;
+  font-family: 'Cormorant Garamond', Courier, monospace;
   font-weight: 200;
+  line-height: 1.5;
 }
 
 section {
@@ -27,9 +28,9 @@ button, a {
   background: none;
   color: white;
   opacity: 0.5;
-  font-family: 'Source Code Pro', Courier, monospace;
+  font-family: 'Cormorant Garamond', Courier, monospace;
   font-weight: 200;
-  font-size: 1em;
+  font-size: 1.2em;
   cursor: pointer;
   text-decoration: none;
 }
@@ -53,6 +54,7 @@ button:hover {
 
 .text-button {
   opacity: 0.5;
+  margin-left: 0.5em;
 }
 
 .text-button.on, .text-button:hover {
@@ -67,10 +69,19 @@ img {
 
 #text {
   color: white;
-  font-size: 3em;
+  font-size: 4em;
   width: 60%;
   display: none;
   text-align: center;
+}
+
+.small {
+  align-items: flex-end;
+  font-size: 0.5em;
+}
+
+.small #text {
+  margin-bottom: 2em;
 }
 
 .white-fade {
@@ -90,6 +101,17 @@ img {
   to {background-color: white;}
 }
 
+
+#start {
+  font-size: 4em;
+}
+
+
+h1 {
+  font-size: 1.5em;
+  margin: 0;
+}
+
 #transcript-page {
   background: black;
   color: white;
@@ -97,19 +119,14 @@ img {
 
 #transcript-container {
   display: block;
+  padding-top: 3em;
 }
 
 .transcript {
   color: white;
-  font-size: 1em;
+  font-size: 1.5em;
   width: 60%;
   margin: 0 auto;
   text-align: left;
-  padding-top: 5em;
+  padding-bottom: 3em;
 } 
-
-h1 {
-  font-size: 1em;
-  font-weight: bold;
-  text-transform: uppercase;
-}

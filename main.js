@@ -2,12 +2,23 @@ let chap = -1;
 let captionsOn = true;
 let fadeTimeout;
 
+$('#start').on('click', start);
 $('#prev').on('click', playPrev);
 $('#next').on('click', playNext);
 $('.chap-button').on('click', playChapter);
 $('#toggleCaptions').on('click', toggleCaptions);
 $('#audio')[0].addEventListener('timeupdate', checkCues, false); 
+$('#audio')[0].addEventListener('ended', () => {
+  if (chap < 4) playNext();
+  else showCredits();
+}, false); 
 $('body').on('mousemove', showNav);
+
+function start() {
+  $('#start').hide();
+  $('#chap-buttons').css('display', 'inline-block');
+  playNext();
+}
 
 function toggleCaptions() {
   captionsOn = !captionsOn;
@@ -94,8 +105,10 @@ function checkCues(e) {
 
   if (t  >= chapters[chap].image_cue[0] && t < chapters[chap].image_cue[1] && $('#image').is(':hidden')) {
     $('#image').show();
+    $('#text-container').addClass('small');
   } else if ((t < chapters[chap].image_cue[0] || t >= chapters[chap].image_cue[1]) && $('#image').is(':visible')) {
-    // $('#image').hide();
+    $('#image').hide();
+    $('#text-container').removeClass('small');
   }
 }
 
