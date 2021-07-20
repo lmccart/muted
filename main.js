@@ -1,5 +1,5 @@
 let chap = -1;
-let captionsOn = false;
+let captionsOn = true;
 let fadeTimeout;
 
 $('#prev').on('click', playPrev);
@@ -64,6 +64,8 @@ function playChapter(n) {
 
   if (chap === 4) {
     $('body').addClass('white-fade');
+  } else {
+    $('body').removeClass('white-fade');
   }
 }
 
