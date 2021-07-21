@@ -75,6 +75,17 @@ img {
   text-align: center;
 }
 
+#description-container {
+  z-index: -1;
+}
+
+#description {
+  margin-top: 10em;
+  color: lightyellow;
+  font-style: italic;
+  font-size: 4em;
+}
+
 .small {
   align-items: flex-end;
   font-size: 0.5em;
@@ -130,3 +141,9 @@ h1 {
   text-align: left;
   padding-bottom: 3em;
 } 
+
+
+@font-face {
+  font-family: MinSans;
+  src: url("Mins_Sans_v0300_Trial/MinSansTrial-Regular-v0300.otf") format("opentype");
+}
