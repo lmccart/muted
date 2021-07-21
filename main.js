@@ -48,6 +48,7 @@ function reset() {
   $('#toggleCaptions').hide();
   $('body').removeClass('white-fade');
   $('#text-container').removeClass('small');
+  $('#description-container').removeClass('small');
   if (chap > 0) {
     let cues = chapters[chap].transcript;
     for (let c of cues) {
@@ -109,9 +110,11 @@ function checkCues(e) {
   if (t  >= chapters[chap].image_cue[0] && t < chapters[chap].image_cue[1] && $('#image').is(':hidden')) {
     $('#image').show();
     $('#text-container').addClass('small');
+    $('#description-container').addClass('small');
   } else if ((t < chapters[chap].image_cue[0] || t >= chapters[chap].image_cue[1]) && $('#image').is(':visible')) {
     $('#image').hide();
     $('#text-container').removeClass('small');
+    $('#description-container').removeClass('small');
   }
 }
 
