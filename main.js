@@ -1,9 +1,6 @@
 let chap = 1;
 let captionsOn = true;
 let fadeTimeout;
-let audioOpen = false;
-
-let sc = SC.Widget('sc');
 
 $('#start').on('click', start);
 $('#prev').on('click', playPrev);
@@ -19,7 +16,6 @@ $('body').on('mousemove', showNav);
 
 $('#show-web').click(showWeb);
 $('#show-transcript').click(showTranscript);
-$('#show-audio').click(showAudio);
 $('#show-credits').click(showCredits);
 
 function start() {
@@ -75,7 +71,7 @@ function playChapter(n) {
   updateNav();
 
   $('body').css('background', chapters[chap].background);
-  $('#text, nav, button, a').css('color', chapters[chap].color);
+  $('#text, nav, .text-button').css('color', chapters[chap].color);
   if (chapters[chap].image) {
     $('#image').attr('src', chapters[chap].image);
     $('#image').css('opacity', 1);
@@ -153,16 +149,17 @@ function hideCaption(description) {
 function showNav() {
   $('nav').stop(true, true).fadeIn(300);
   if (fadeTimeout) clearTimeout(fadeTimeout);
-  fadeTimeout = setTimeout(() => {
-    $('nav').stop(true, true).fadeOut(300);
-  }, 5000);
+  if ($('#web-container').is(':visible')) {
+    fadeTimeout = setTimeout(() => {
+      $('nav').stop(true, true).fadeOut(300);
+    }, 5000);
+  }
 }
 
 function showWeb() {
   $('#audio')[0].play();
+  $('#web-container').css('display', 'block');
   $('#transcript-container').hide();
-  $('#audio-container').hide();
-  sc.pause();
   $('#credits-container').hide();
   $('#nav-left').show();
   $('.text-button').removeClass('current');
@@ -171,33 +168,22 @@ function showWeb() {
 
 function showTranscript() {
   $('#audio')[0].pause();
+  $('#web-container').hide();
   $('#transcript-container').css('display', 'block');
-  $('#audio-container').hide();
-  sc.pause();
   $('#credits-container').hide();
   $('#nav-left').hide();
   $('.text-button').removeClass('current');
   $('#show-transcript').addClass('current');
 }
 
-function showAudio() {
-  console.log('audio open')
-  $('#audio')[0].pause();
-  $('#transcript-container').hide();
-  $('#audio-container').css('display', 'block');
-  $('#credits-container').hide();
-  $('#nav-left').hide();
-  $('.text-button').removeClass('current');
-  $('#show-audio').addClass('current');
-}
-
 function showCredits() {
   $('#audio')[0].pause();
+  $('#web-container').hide();
   $('#transcript-container').hide();
-  $('#audio-container').hide();
-  sc.pause();
   $('#credits-container').css('display', 'block');
   $('#nav-left').hide();
   $('.text-button').removeClass('current');
   $('#show-credits').addClass('current');
 }
+
+showCredits();

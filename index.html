@@ -16,7 +16,6 @@
     <link rel='stylesheet' href='style.css?v=1.0'>
     <title> </title>
     <script src='https://code.jquery.com/jquery-3.6.0.min.js' integrity='sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=' crossorigin='anonymous'></script>
-    <script src='soundcloud.js'></script>
     <script src='chapters.js'></script>
 
   </head>
@@ -36,25 +35,26 @@
       <div id='nav-right'>
         <button id='show-web' class='text-button current'>Web</button>
         <button id='show-transcript' class='text-button'>Text</button>
-        <button id='show-audio' class='text-button'>Audio</button>
+        <a id='show-audio' class='text-button' href='https://soundcloud.com/lauren-mccarthy-437343893/sets/pandemicscape' target='_blank'>Audio</a>
         <button id='show-credits' class='text-button'>Credits</button>
       </div>
     </nav>
-    <section id='image-container'>
-      <img id='image' src='' alt=''>
-    </section>
-    <section id='text-container'>
-      <div id='text'>Encased in a white chat box with black monotype text is a statement “I think one day we will be able to go outside again.”</div>
-      <button id='start'>Enter</button>
-    </section>
-    <section id='description-container'>
-      <div id='description'></div>
-    </section>
-    <audio id='audio'></audio>
-
+    <main id='web-container'>
+      <section id='image-container'>
+        <img id='image' src='' alt=''>
+      </section>
+      <section id='text-container'>
+        <div id='text'>Encased in a white chat box with black monotype text is a statement “I think one day we will be able to go outside again.”</div>
+        <button id='start'>Enter</button>
+      </section>
+      <section id='description-container'>
+        <div id='description'></div>
+      </section>
+      <audio id='audio'></audio>
+    </main>
 
     <section id='transcript-container'>
-      <div id='later-date' class='transcript'>
+      <div id='later-date' class='block'>
         <h1>Later Date</h1>
         <p>Encased in a white chat box with black monotype text is a statement “I think one day we will be able to go outside again.” A down arrow follows the statement, prompting the user to expand the context of the conversation.</p>
         <p>As we waited in the middle of everything last March, I kept thinking about how “later” had taken on new importance. It had been elevated from that place to which we’d relegate anything that did not really concern us to a place where we’d do everything. I built a web interface to facilitate a series of online chats with people where we would make plans for a “later date”, when we were able to go outside again. I fantasized about these later dates. Being in the same space as other people. Reaching out and touching. Shared surfaces. Breathing, talking, anything really. It is a performance in two parts. In the first, we chat and imagine together our first meeting. Where will we go, what will we do, what will we  say? This future plan gets saved as a sort of script. Later, when allowed out again, they receive a request to meet and we enact this script. This is part two. </p>
@@ -63,7 +63,7 @@
         <p>We were planning with each other while we were negotiating with the future. What season will it be? Will we be able to embrace? Will that place still exist? We talked about the first days when frantic decisions were being made, and each of our personal boundaries closing in as we began to feel unsafe with one another. We acknowledged the discomfort of trying to find a stable place in a situation we refuse to accept as normal. We make extremely specific plans, subject to change.</p>
         <p>Our conversation was the opposite of a Zoom grid. It was one-to-one, slow, text-only. I called this piece a performance, but with the camera off, it felt like the first non-performance I had experienced in weeks. The interaction is about waiting instead of streaming. And in this lack of bandwidth, we are left space to imagine. The person on the other end, whose presence we are only certain of at brief moments when messages pop onscreen. The later with this person when we will meet in highest fidelity. The days and months that will unfold after this exchange.</p>
       </div>
-      <div id='i-head-talking-is-dangerous' class='transcript'>
+      <div id='i-head-talking-is-dangerous' class='block'>
         <h1>I heard TALKING IS DANGEROUS</h1>
         <p>Lauren stands on a patch of grass outside a home with her back towards the camera. Two young masked people stand at the top of a small set of stairs. At this distance, it is uncertain if they are looking at Lauren or at the smartphone in Lauren’s left hand. The phone is extended forward for legibility and rotated in landscape mode. All three people pictured are nicely dressed.</p>
         <p><i>It is important to be kind in stressful times. It's hard to hold all these different contexts in mind. Anybody that can live in solitude is a powerful being. At a crowded supermarket, the panic was palpable.</i></p>
@@ -75,21 +75,21 @@
         <p>I keep wondering, in moments before laughter, when our gut is about to push out air from our mouths with a force greater than speaking, how will we compose ourselves then?</p>
         <p><i>I care about you immensely.</i></p>
       </div>
-      <div id='you-can-say' class='transcript'>
+      <div id='you-can-say' class='block'>
         <h1>You Can Say</h1>
         <p>When I became exhausted with the constant Zoom calls, I created a digital clone of my voice to replace me. This voice allows me to puppet myself, using it to say all the things I hadn't previously been able to vocalize. I play with the phrases we expect from one another, and from machines. You can say turn off the lights. You can say wake me up at 7am. You can say talk to me. I am captivated by the ways we are taught to interact with algorithms, [Sorry, I didn't get that] and how this shapes the way we interact with each other. What are the rules, what happens when we introduce glitches? [Sorry, I didn't get that.]</p>
         <p>I feel a sense of power owning the data of my own voice. [Haha ha hahaahahah hahahahha hahahaha...] I am taking it back from the tech companies, constantly tapping my conversations, sampling and analyzing and archiving my speech for future use yet unknown. Instead, I offer the control of my voice to others. Upon visiting my website, each visitor is asked by my voice, “What do you want me to say?” However they reply, my voice responds by speaking their own words back to them. Then it asks again, “What do you want me to say?”</p>
         <p>[I feel so abhorrent. I feel so absorbed. I feel so accepting. I feel so aching. I feel so admiring.]</p>
         <p>[You can say "What time is it?" You can say "What day is it?" You can say "What am I doing tomorrow?"]</p>
       </div>
-      <div id='sleepover' class='transcript'>
+      <div id='sleepover' class='block'>
         <h1>Sleepover</h1>
         <p>In the foreground, a silhouette of shrubs frame Lauren in the midground. She lays in a sleeping bag in her friend’s backyard. Her form is disguised into the surrounding darkness apart from the light from her smartphone screen illuminating her face. An overhead light also shows traces of outdoor furniture behind her and the fences that reveal the boundary of the backyard.</p>
         <p>The further I got into this series of voice experiments, the more I began to dissociate. It became hard to tell what existed beyond my computer screen. Months of caution began to induce feelings of extreme recklessness and futility. In a last ditch effort to get close, I sent text messages to friends. A holiday offering of my live body outside their home. We have only text communication. I spend the night out on their lawn. Each of us thinking of the other’s physicality. Seeking presence.</p>
         <p>Suddenly, my motion sensor lights turned off. Your whole body disappeared into the night. Aside from your face which was illuminated by your phone you held above you. Slightly uneased and amused, I messaged you, “I left the back door unlocked in case you need to use the restroom tonight.” The typing bubble appeared and I looked to see your fingers move across your screen in that instance. “Thanks!” you reply.</p>
         <p>I feel safety in this closeness at distance. While I’m thinking of all the others outside every night in more precarious positions. Last spring we witnessed extraordinary measures taken to provide housing and care, measures we were previously told were too hard and too expensive and would take too much time. As these safety nets are now being unravelled, how do we keep demanding support for the most vulnerable? Who are the people outside our homes that we choose to think of at night?</p>
       </div>
-      <div id='good-night' class='transcript'>
+      <div id='good-night' class='block'>
         <h1>Good Night</h1>
         <p>After a year spent fearing for our health, grieving the loss of loved ones, watching the ever growing death counts, I have never felt so in touch with my own mortality. Drifting confused between utter stagnation and overwhelming transience, I started Good Night. A performance for one person that continues as long as I am alive. Every night before sleep, I text the owner of the work good night. At any point, that person may choose to pass the work to someone else, at which point the good night texts transfer to the next person. It is the first in a series of rest-of-life performances I plan to complete. What does it mean to commit, to something or someone, when the end is so palpable yet unknown?</p>
         <p>This series of pandemic works are about isolation, breakdown, danger, disconnection, grief, frustration, communication, wanting. Streaming ourselves through every possible channel, platform, and app, how do we hold each other together?</p>
@@ -98,16 +98,32 @@
 
     
     <section id='credits-container'>
-      <div class='transcript'>
-        <h1>Credits</h1>
-      </div>
-    </section>
+      <div id='credits' class='block'>
+        <h1 class='sr-only'>Credits</h1>
+        <h2>Performances</h2>
+        <p><a href='https://lauren-mccarthy.com' target='_blank'>Lauren Lee McCarthy</a></p>
 
-    
-    <section id='audio-container'>
-      <div class='transcript'>
-        <h1>Audio</h1>
-        <iframe id='sc' width="100%" height="450" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1289985706%3Fsecret_token%3Ds-56PXEH88DDy&color=%23040404&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+        <h2>Text, Description, Voice</h2>
+        <p><a href='https://dalena.me/' target='_blank'>Dalena Tran</a> &amp; Lauren Lee McCarthy</p>
+
+        <h2>Soundscape</h2>
+        <p><a href='https://chisatohughes.com/' target='_blank'>Chisa Hughes</a></p>
+
+        <h2>Programming &amp; Design</h2>
+        <p>Lauren Lee McCarthy</p>
+
+        <h2>Works Included</h2>
+        <a href='https://lauren-mccarthy.com/Later-Date' target='_blank'>Later Date</a><br>
+        <a href='https://lauren-mccarthy.com/I-heard-TALKING-IS-DANGEROUS' target='_blank'>I Heard Talking Is Dangerous</a><br>
+        <a href='https://lauren-mccarthy.com/You-Can-Say' target='_blank'>You Can Say</a><br>
+        <a href='https://lauren-mccarthy.com/Sleepover' target='_blank'>Sleepover</a><br>
+        <a href='https://lauren-mccarthy.com/good-night' target='_blank'>Good Night</a>
+
+      </div>
+      <div class='block'>
+
+        <h2 class='sr-only'>Support</h2>
+        <p>This work was supported by grants from IDFA DocLab and UCLA.</p>
       </div>
     </section>
 

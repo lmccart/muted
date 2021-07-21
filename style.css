@@ -147,6 +147,19 @@ h1 {
   margin: 0;
 }
 
+h2 {
+  font-style: italic;
+  font-weight: normal;
+  font-size: 1em;
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  margin: 0;
+  margin-bottom: 2em;
+}
+
 
 /* TRANSCRIPT PAGE */
 
@@ -155,10 +168,10 @@ h1 {
   color: white;
   overflow: scroll;
   display: none;
-  padding-top: 5em;
+  padding-top: 8em;
 }
 
-.transcript {
+.block {
   color: white;
   font-size: 1.5em;
   width: 60%;
@@ -167,19 +180,6 @@ h1 {
   padding-bottom: 3em;
 } 
 
-/* AUDIO PAGE */
-
-#audio-container {
-  background: rgb(50, 33, 12);
-  color: white;
-  overflow: scroll;
-  display: none;
-  padding-top: 5em;
-}
-
-#sc {
-  margin-top: 1em;
-}
 
 /* CREDITS PAGE */
 
@@ -188,13 +188,57 @@ h1 {
   color: white;
   overflow: scroll;
   display: none;
-  padding-top: 5em;
+  padding-top: 8em;
 }
 
+#credits-container .block {
+  text-align: center;
+}
+
+#credits-container a {
+  opacity: 1;
+  font-size: 1em;
+  color: lightyellow;
+}
+#credits-container a:hover {
+  opacity: 0.5;
+}
+
+.block:last-child {
+  margin-bottom: 5em;
+}
 
 /* FONTS PAGE */
 
 @font-face {
   font-family: MinSans;
   src: url("Mins_Sans_v0300_Trial/MinSansTrial-Regular-v0300.otf") format("opentype");
+}
+
+
+.sr-only {
+	border: 0 !important;
+	clip: rect(1px, 1px, 1px, 1px) !important; /* 1 */
+	-webkit-clip-path: inset(50%) !important;
+		clip-path: inset(50%) !important;  /* 2 */
+	height: 1px !important;
+	margin: -1px !important;
+	overflow: hidden !important;
+	padding: 0 !important;
+	position: absolute !important;
+	width: 1px !important;
+	white-space: nowrap !important;            /* 3 */
+}
+
+
+.sr-only-focusable:focus,
+.sr-only-focusable:active {
+	clip: auto !important;
+	-webkit-clip-path: none !important;
+		clip-path: none !important;
+	height: auto !important;
+	margin: auto !important;
+	overflow: visible !important;
+	width: auto !important;
+	white-space: normal !important;
 }
