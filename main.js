@@ -45,6 +45,8 @@ function reset() {
   $('#image').hide();
   $('#text').hide();
   $('#toggleCaptions').hide();
+  $('body').removeClass('white-fade');
+  $('#text-container').removeClass('small');
   if (chap > 0) {
     let cues = chapters[chap].transcript;
     for (let c of cues) {
