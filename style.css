@@ -3,6 +3,7 @@ body {
   font-family: 'Cormorant Garamond', Courier, monospace;
   font-weight: 200;
   line-height: 1.5;
+  overflow: hidden;
 }
 
 section {
@@ -21,6 +22,7 @@ nav {
   top: 0;
   left: 0;
   width: 100%;
+  z-index: 1;
 }
 
 #nav-left {
@@ -140,18 +142,20 @@ img {
 
 
 h1 {
-  font-size: 1.5em;
+  font-style: italic;
+  font-size: 1em;
   margin: 0;
 }
 
-#transcript-page {
-  background: black;
-  color: white;
-}
+
+/* TRANSCRIPT PAGE */
 
 #transcript-container {
-  display: block;
-  padding-top: 3em;
+  background: rgb(50, 33, 12);
+  color: white;
+  overflow: scroll;
+  display: none;
+  padding-top: 5em;
 }
 
 .transcript {
@@ -163,6 +167,32 @@ h1 {
   padding-bottom: 3em;
 } 
 
+/* AUDIO PAGE */
+
+#audio-container {
+  background: rgb(50, 33, 12);
+  color: white;
+  overflow: scroll;
+  display: none;
+  padding-top: 5em;
+}
+
+#sc {
+  margin-top: 1em;
+}
+
+/* CREDITS PAGE */
+
+#credits-container {
+  background: rgb(50, 33, 12);
+  color: white;
+  overflow: scroll;
+  display: none;
+  padding-top: 5em;
+}
+
+
+/* FONTS PAGE */
 
 @font-face {
   font-family: MinSans;

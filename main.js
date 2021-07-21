@@ -1,6 +1,9 @@
 let chap = 1;
 let captionsOn = true;
 let fadeTimeout;
+let audioOpen = false;
+
+let sc = SC.Widget('sc');
 
 $('#start').on('click', start);
 $('#prev').on('click', playPrev);
@@ -13,6 +16,11 @@ $('#audio')[0].addEventListener('ended', () => {
   else showCredits();
 }, false); 
 $('body').on('mousemove', showNav);
+
+$('#show-web').click(showWeb);
+$('#show-transcript').click(showTranscript);
+$('#show-audio').click(showAudio);
+$('#show-credits').click(showCredits);
 
 function start() {
   $('#start').hide();
@@ -107,14 +115,16 @@ function checkCues(e) {
     }
   }
 
-  if (t  >= chapters[chap].image_cue[0] && t < chapters[chap].image_cue[1] && $('#image').is(':hidden')) {
-    $('#image').show();
-    $('#text-container').addClass('small');
-    $('#description-container').addClass('small');
-  } else if ((t < chapters[chap].image_cue[0] || t >= chapters[chap].image_cue[1]) && $('#image').is(':visible')) {
-    $('#image').hide();
-    $('#text-container').removeClass('small');
-    $('#description-container').removeClass('small');
+  if (chapters[chap].image_cue) {
+    if (t  >= chapters[chap].image_cue[0] && t < chapters[chap].image_cue[1] && $('#image').is(':hidden')) {
+      $('#image').show();
+      $('#text-container').addClass('small');
+      $('#description-container').addClass('small');
+    } else if ((t < chapters[chap].image_cue[0] || t >= chapters[chap].image_cue[1]) && $('#image').is(':visible')) {
+      $('#image').hide();
+      $('#text-container').removeClass('small');
+      $('#description-container').removeClass('small');
+    }
   }
 }
 
@@ -148,3 +158,46 @@ function showNav() {
   }, 5000);
 }
 
+function showWeb() {
+  $('#audio')[0].play();
+  $('#transcript-container').hide();
+  $('#audio-container').hide();
+  sc.pause();
+  $('#credits-container').hide();
+  $('#nav-left').show();
+  $('.text-button').removeClass('current');
+  $('#show-web').addClass('current');
+}
+
+function showTranscript() {
+  $('#audio')[0].pause();
+  $('#transcript-container').css('display', 'block');
+  $('#audio-container').hide();
+  sc.pause();
+  $('#credits-container').hide();
+  $('#nav-left').hide();
+  $('.text-button').removeClass('current');
+  $('#show-transcript').addClass('current');
+}
+
+function showAudio() {
+  console.log('audio open')
+  $('#audio')[0].pause();
+  $('#transcript-container').hide();
+  $('#audio-container').css('display', 'block');
+  $('#credits-container').hide();
+  $('#nav-left').hide();
+  $('.text-button').removeClass('current');
+  $('#show-audio').addClass('current');
+}
+
+function showCredits() {
+  $('#audio')[0].pause();
+  $('#transcript-container').hide();
+  $('#audio-container').hide();
+  sc.pause();
+  $('#credits-container').css('display', 'block');
+  $('#nav-left').hide();
+  $('.text-button').removeClass('current');
+  $('#show-credits').addClass('current');
+}
