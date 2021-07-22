@@ -71,7 +71,7 @@ function playChapter(n) {
   updateNav();
 
   $('body').css('background', chapters[chap].background);
-  $('#text, nav, .text-button').css('color', chapters[chap].color);
+  $('#text, nav, .chap-button, .text-button, .arrow-button').css('color', chapters[chap].color);
   if (chapters[chap].image) {
     $('#image').attr('src', chapters[chap].image);
     $('#image').css('opacity', 1);
@@ -185,5 +185,3 @@ function showCredits() {
   $('.text-button').removeClass('current');
   $('#show-credits').addClass('current');
 }
-
-showCredits();
