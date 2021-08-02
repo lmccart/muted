@@ -155,7 +155,7 @@ function showNav() {
   if ($('#web-container').is(':visible')) {
     fadeTimeout = setTimeout(() => {
       $('nav').stop(true, true).fadeOut(300);
-    }, 3000);
+    }, 2000);
   }
 }
 
