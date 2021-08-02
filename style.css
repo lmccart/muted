@@ -1,10 +1,10 @@
 body {
   background: black;
-  font-family: 'Cormorant Garamond', Courier, monospace;
-  font-weight: 200;
+  font-family: 'Inter', 'Cormorant Garamond', Courier, monospace;
+  font-weight: 300;
   line-height: 1.4;
   overflow: hidden;
-  font-size: 1.36vh;
+  font-size: 1.3vh;
 }
 
 section {
@@ -43,8 +43,8 @@ button, a {
   background: none;
   color: white;
   opacity: 0.5;
-  font-family: 'Cormorant Garamond', Courier, monospace;
-  font-weight: 200;
+  font-family: 'Inter', 'Cormorant Garamond', Courier, monospace;
+  font-weight: 300;
   font-size: 1.2em;
   cursor: pointer;
   text-decoration: none;
