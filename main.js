@@ -1,4 +1,4 @@
-let chap = -1;
+let chap = 1;
 let captionsOn = true;
 let fadeTimeout;
 
@@ -128,7 +128,16 @@ function checkCues(e) {
 }
 
 function displayCaption(text, description) {
-  if (description) {
+  if (text.includes('[FLASH]')) {
+    $('body').css('background', '#c01903');
+    setTimeout(() => { $('body').css('background', chapters[chap].background); }, 150);
+  } else if (text.includes('[HA]')) {
+    for (let i = 0; i < description; i+=2) {
+      console.log(i);
+      setTimeout(() => { $('body').css('background', '#ff2b00'); }, i * 100 + Math.random() * 60 - 30);
+      setTimeout(() => { $('body').css('background', chapters[chap].background); }, (i+1) * 100 + Math.random() * 60 - 30);
+    }
+  } else if (description) {
     $('#description').html(text);
     $('#description').show();
 
