@@ -12,7 +12,6 @@ $('#audio')[0].addEventListener('ended', () => {
   if (chap < 4) playNext();
   else showCredits();
 }, false); 
-$('body').on('mousemove', showNav);
 
 $('#show-web').click(showWeb);
 $('#show-transcript').click(showTranscript);
@@ -23,6 +22,9 @@ function start() {
   $('#nav-right').css('display', 'inline-block');
   $('#nav-left').css('display', 'inline-block');
   playNext();
+  setTimeout(() => { 
+    $('body').on('mousemove', showNav);
+  }, 2000);
 }
 
 function toggleCaptions() {

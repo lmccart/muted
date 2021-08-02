@@ -25,6 +25,7 @@ nav {
   width: 100%;
   z-index: 1;
   font-size: 1.25em;
+  display: none;
 }
 
 #nav-left {
