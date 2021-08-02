@@ -20,7 +20,8 @@ $('#show-credits').click(showCredits);
 
 function start() {
   $('#start').hide();
-  $('#chap-buttons').css('display', 'inline-block');
+  $('#nav-right').css('display', 'inline-block');
+  $('#nav-left').css('display', 'inline-block');
   playNext();
 }
 
