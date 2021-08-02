@@ -4,6 +4,7 @@ body {
   font-weight: 200;
   line-height: 1.5;
   overflow: hidden;
+  font-size: 1.36vh;
 }
 
 section {
@@ -23,6 +24,7 @@ nav {
   left: 0;
   width: 100%;
   z-index: 1;
+  font-size: 1.25em;
 }
 
 #nav-left {

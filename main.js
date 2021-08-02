@@ -1,4 +1,4 @@
-let chap = 1;
+let chap = 0;
 let captionsOn = true;
 let fadeTimeout;
 
