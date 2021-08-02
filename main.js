@@ -1,4 +1,4 @@
-let chap = 0;
+let chap = -1;
 let captionsOn = true;
 let fadeTimeout;
 
@@ -158,12 +158,13 @@ function showNav() {
 
 function showWeb() {
   $('#audio')[0].play();
-  $('#web-container').css('display', 'block');
+  $('#web-container').css('display', 'flex');
   $('#transcript-container').hide();
   $('#credits-container').hide();
   $('#nav-left').show();
   $('.text-button').removeClass('current');
   $('#show-web').addClass('current');
+  $('#text, nav, .chap-button, .text-button, .arrow-button').css('color', chapters[chap].color);
 }
 
 function showTranscript() {
@@ -174,14 +175,16 @@ function showTranscript() {
   $('#nav-left').hide();
   $('.text-button').removeClass('current');
   $('#show-transcript').addClass('current');
+  $('#text, nav, .chap-button, .text-button, .arrow-button').css('color', 'white');
 }
 
 function showCredits() {
   $('#audio')[0].pause();
   $('#web-container').hide();
   $('#transcript-container').hide();
-  $('#credits-container').css('display', 'block');
+  $('#credits-container').css('display', 'flex');
   $('#nav-left').hide();
   $('.text-button').removeClass('current');
   $('#show-credits').addClass('current');
+  $('#text, nav, .chap-button, .text-button, .arrow-button').css('color', 'white');
 }
