@@ -107,6 +107,8 @@ img {
   margin-top: 10em;
   color: lightyellow;
   font-style: italic;
+  width: 60%;
+  text-align: center;
 }
 
 #text-container.small {
