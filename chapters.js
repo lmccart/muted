@@ -347,7 +347,7 @@ const chapters = [
       [30, 'Sending slurp.', true],
       [31, '', true],
       [32.424, 'at which point the good night texts transfer to the next person.'],
-      [37.612, 'It is the first in a series of rest-of-life performances I plan to complete.'],
+      [37.612, 'It is the first in a series of rest of life performances I plan to complete.'],
       [42.684, 'What does it mean to commit, to something or someone,'],
       [44, 'Button taps.', true],
       [45.684, 'when the end is so palpable yet unknown?'],
