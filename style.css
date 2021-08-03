@@ -10,7 +10,7 @@ h1, h2, body, p, a, button {
   font-size: 2vh;
 }
 
-#text, #description {
+#text, #description, #start {
   font-size: 3.2em;
 }
 
@@ -142,10 +142,6 @@ img {
   to {background-color: white;}
 }
 
-
-#start {
-  font-size: 4em;
-}
 
 
 h1 {
