@@ -356,10 +356,10 @@ const chapters = [
       [49.816, 'This series of pandemic works are about'],
       [51.768, 'isolation, breakdown, danger, disconnection, grief, frustration, communication, wanting.'],
       [61.809, 'Streaming ourselves through every possible channel, platform, and app,'],
-      [64, 'High tap tap tap.', true],
+      // [64, 'High tap tap tap.', true],
       [66.275, 'how do we hold the bits of each other together?'],
-      [69, 'Slurp.', true],
-      [69.5, '', true],
+      // [69, 'Slurp.', true],
+      // [69.5, '', true],
       [72, '']
     ]
   },
