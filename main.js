@@ -194,7 +194,7 @@ function showCredits() {
   $('#audio')[0].pause();
   $('#web-container').hide();
   $('#transcript-container').hide();
-  $('#credits-container').css('display', 'flex');
+  $('#credits-container').css('display', 'block');
   $('#nav-left').hide();
   $('.text-button').removeClass('current');
   $('#show-credits').addClass('current');
