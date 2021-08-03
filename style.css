@@ -14,6 +14,9 @@ h1, h2, body, p, a, button {
   font-size: 3.2em;
 }
 
+#start {
+  animation: pulse 2s infinite;
+}
 
 section {
   width: 100vw;
@@ -251,4 +254,18 @@ p {
 	overflow: visible !important;
 	width: auto !important;
 	white-space: normal !important;
+}
+
+@keyframes pulse {
+	0% {
+		opacity: 0.5;
+	}
+
+	50% {
+		opacity: 0.8;
+	}
+
+	100% {
+		opacity: 0.5;
+	}
 }
