@@ -18,6 +18,22 @@ h1, h2, body, p, a, button {
   animation: pulse 2s infinite;
 }
 
+.info {
+  color: white;
+  opacity: 0.5;
+  position: absolute;
+  top: 0;
+  padding: 0.9em 1.2em 0.9em 1em;
+}
+
+#info-left {
+  left: 0;
+}
+
+#info-right {
+  right: 0;
+}
+
 section {
   width: 100vw;
   height: 100vh;
@@ -59,8 +75,9 @@ button, a {
   text-decoration: none;
 }
 
-button:hover {
-  opacity: 1.0;
+button:hover, #start:hover {
+  opacity: 1.0 !important;
+  animation: none;
 }
 
 .current {

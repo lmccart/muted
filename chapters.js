@@ -40,7 +40,7 @@ const chapters = [
       [66.970, 'Where will we go, what will we do, what will we say?'],
       [70.960, 'This future plan gets saved as a sort of script.'],
       [73.850, 'Later, when allowed out again, they receive a request to meet and we enact this script.'],
-      [76, 'Dogs barking, wind blowing.', true],
+      [76, 'Echo of sanitizing spray and wiping doorknobs.', true],
       [80.380, 'This is part two.'],
       [82, 'People laughing outside.', true],
       [84.530, 'You were one of the last people I saw before the UCLA campus closed down that day.'],

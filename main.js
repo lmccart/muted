@@ -19,6 +19,7 @@ $('#show-credits').click(showCredits);
 
 function start() {
   $('#start').hide();
+  $('.info').hide();
   $('#nav-right').css('display', 'inline-block');
   $('#nav-left').css('display', 'inline-block');
   playNext();
