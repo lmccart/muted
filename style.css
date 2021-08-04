@@ -23,7 +23,7 @@ h1, h2, body, p, a, button {
   opacity: 0.5;
   position: absolute;
   top: 0;
-  padding: 0.9em 1.2em 0.9em 1em;
+  padding: 0.9em 1.3em;
 }
 
 #info-left {
