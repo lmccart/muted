@@ -11,11 +11,24 @@ $('#audio')[0].addEventListener('timeupdate', checkCues, false);
 $('#audio')[0].addEventListener('ended', () => {
   if (chap < 4) playNext();
   else showCredits();
+  setTimeout(restart, 10000);
 }, false); 
 
 $('#show-web').click(showWeb);
 $('#show-transcript').click(showTranscript);
 $('#show-credits').click(showCredits);
+
+
+function restart() {
+  showWeb();
+  reset();
+  $('body').css('background', 'black');
+  chap = -1;
+  $('#start').show();
+  $('.info').show();
+  $('#nav-right').css('display', 'none');
+  $('#nav-left').css('display', 'none');
+}
 
 function start() {
   $('#start').hide();
@@ -23,9 +36,9 @@ function start() {
   $('#nav-right').css('display', 'inline-block');
   $('#nav-left').css('display', 'inline-block');
   playNext();
-  setTimeout(() => { 
-    $('body').on('mousemove', showNav);
-  }, 2000);
+  $('body').on('mousemove', showNav);
+  // setTimeout(() => {
+  // }, 2000);
 }
 
 function toggleCaptions() {
@@ -49,7 +62,7 @@ function playNext() {
 }
 
 function reset() {
-  $('#audio').stop();
+  $('#audio')[0].pause();
   $('#image').hide();
   $('#text').hide();
   $('#description').hide();
@@ -57,10 +70,11 @@ function reset() {
   $('body').removeClass('white-fade');
   $('#text-container').removeClass('small');
   $('#description-container').removeClass('small');
-  if (chap > 0) {
+  if (chap > -1) {
     let cues = chapters[chap].transcript;
     for (let c of cues) {
       c[4] = false;
+      console.log('h')
     }
   }
 }
@@ -102,6 +116,7 @@ function updateNav() {
 
 
 function checkCues(e) {
+  if (chap < 0) return;
   let t = e.path[0].currentTime;
   let cues = chapters[chap].transcript;
   for (let c of cues) {
