@@ -97,7 +97,7 @@ const chapters = [
     ]
   },  
   {
-    background: '#32210c',
+    background: '#887402',
     color: 'white',
     image: 'images/2_I-Heard-Talking-Is-Dangerous.jpg',
     image_cue: [26, 50],
@@ -368,6 +368,10 @@ const chapters = [
       [72, '']
     ]
   },
+  {
+    background: '#008cff',
+    color: 'white'
+  }
 
 ];
 

@@ -22,7 +22,7 @@ $('#show-credits').click(showCredits);
 function restart() {
   showWeb();
   reset();
-  $('body').css('background', 'black');
+  $('body').css('background', chapters[chapters.length-1].background);
   chap = -1;
   $('#start').show();
   $('.info').show();
@@ -92,7 +92,7 @@ function playChapter(n) {
   $('#text, nav, .chap-button, .text-button, .arrow-button').css('color', chapters[chap].color);
   if (chapters[chap].image) {
     $('#image').attr('src', chapters[chap].image);
-    $('#image').css('opacity', 1);
+    $('#image').on('load', displayImage);
   } else {
     $('#image').css('opacity', 0);
   }
@@ -130,7 +130,7 @@ function checkCues(e) {
     }
   }
 
-  if (chapters[chap].image_cue) {
+  if (chapters[chap].image_cue) { // show image
     if (t  >= chapters[chap].image_cue[0] && t < chapters[chap].image_cue[1] && $('#image').is(':hidden')) {
       $('#image').show();
       $('#text-container').addClass('small');
@@ -172,6 +172,29 @@ function hideCaption(description) {
   }
 }
 
+function displayImage() {
+  if (chap === 3) { // sleepover sizing
+    let w = $('#image').width();
+    let h = $('#image').height();
+    let ww = window.innerWidth;
+    let wh = window.innerHeight;
+    console.log($('#image'))
+    console.log(w, h, ww, wh);
+    if (w/h > ww/wh) {
+      $('#image').height('100%');
+    } else {
+      $('#image').width('100%');
+    }
+    $('#image').css('max-width', '400%');
+    $('#image').css('max-height', '400%');
+  } else {
+    $('#image').css('max-width', '75%');
+    $('#image').css('max-height', '70%');
+    $('#image').width('auto');
+    $('#image').height('auto');
+  }
+  $('#image').css('opacity', 1);
+}
 
 
 function showNav() {
