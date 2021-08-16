@@ -1,6 +1,7 @@
 let chap = -1;
 let captionsOn = true;
 let fadeTimeout;
+let ended = false;
 
 $('#start').on('click', start);
 $('#prev').on('click', playPrev);
@@ -11,8 +12,9 @@ $('#audio')[0].addEventListener('timeupdate', checkCues, false);
 $('#audio')[0].addEventListener('ended', () => {
   if (chap < 4) playNext();
   else {
+    ended = true;
     showCredits();
-    setTimeout(restart, 10000);
+    setTimeout(restart, 60*1000);
   }
 }, false); 
 
@@ -22,6 +24,7 @@ $('#show-credits').click(showCredits);
 
 
 function restart() {
+  ended = false;
   showWeb();
   reset();
   $('body').css('background', chapters[chapters.length-1].background);
@@ -76,7 +79,6 @@ function reset() {
     let cues = chapters[chap].transcript;
     for (let c of cues) {
       c[4] = false;
-      console.log('h')
     }
   }
 }
@@ -210,14 +212,17 @@ function showNav() {
 }
 
 function showWeb() {
-  $('#audio')[0].play();
-  $('#web-container').css('display', 'flex');
-  $('#transcript-container').hide();
-  $('#credits-container').hide();
-  $('#nav-left').show();
-  $('.text-button').removeClass('current');
-  $('#show-web').addClass('current');
-  $('#text, nav, .chap-button, .text-button, .arrow-button').css('color', chapters[chap].color);
+  if (ended) restart();
+  else {
+    $('#audio')[0].play();
+    $('#web-container').css('display', 'flex');
+    $('#transcript-container').hide();
+    $('#credits-container').hide();
+    $('#nav-left').show();
+    $('.text-button').removeClass('current');
+    $('#show-web').addClass('current');
+    $('#text, nav, .chap-button, .text-button, .arrow-button').css('color', chapters[chap].color);
+  }
 }
 
 function showTranscript() {
