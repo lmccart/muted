@@ -10,8 +10,10 @@ $('#toggleCaptions').on('click', toggleCaptions);
 $('#audio')[0].addEventListener('timeupdate', checkCues, false); 
 $('#audio')[0].addEventListener('ended', () => {
   if (chap < 4) playNext();
-  else showCredits();
-  setTimeout(restart, 10000);
+  else {
+    showCredits();
+    setTimeout(restart, 10000);
+  }
 }, false); 
 
 $('#show-web').click(showWeb);
