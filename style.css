@@ -52,16 +52,19 @@ nav {
   width: 100%;
   z-index: 1;
   display: none;
+  pointer-events: none;
 }
 
 #nav-left {
   padding: 0.9em 1.2em 0.9em 1em;
   float: left;
+  pointer-events: all;
 }
 
 #nav-right {
   padding: 0.9em 1.3em;
   float: right;
+  pointer-events: all;
 }
 
 button, a {
@@ -191,15 +194,20 @@ p {
 #transcript-container {
   background: #008cff;
   color: white;
-  overflow: scroll;
   display: none;
+}
+
+.holder{
+  height: 100vh;
   padding-top: 8em;
+  overflow: scroll;
 }
 
 .block {
   color: white;
   font-size: 1.2em;
-  width: 55%;
+  width: 75%;
+  max-width: 1024px;
   margin: 0 auto;
   text-align: left;
   padding-bottom: 3em;
@@ -217,7 +225,6 @@ p {
   color: white;
   overflow: scroll;
   display: none;
-  padding-top: 8em;
 }
 
 #credits-container .block {
@@ -287,4 +294,108 @@ p {
 	100% {
 		opacity: 0.5;
 	}
+}
+
+@media only screen and (max-width: 1024px) and (min-width: 601px) {
+  .chap-button {
+    padding: 5px;
+  }
+
+  nav {
+    height: 100%;
+    overflow: hidden;
+  }
+
+  #nav-left {
+    width: 100%;
+    padding-left: 0;
+    text-align: center;;
+  }
+
+  #nav-right {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+
+  #text-container:not(.small):not(.join) {
+    height: 60vh;
+  }
+
+  #description-container:not(.small) {
+    height: 40vh;
+    margin-top: 60vh;
+  }
+
+  
+  #text, #description {
+    font-size: 2.5em;
+    width: 75%;
+    margin-top: 0;
+  }
+
+  .small {
+    align-items: flex-end;
+    font-size: 0.75em !important;
+  }
+
+  img {
+    max-width: 90% !important;
+  }
+
+}
+
+@media only screen and (max-width: 600px) {
+
+  .chap-button {
+    padding: 5px;
+  }
+
+  nav {
+    height: 100%;
+    overflow: hidden;
+  }
+
+  #nav-left {
+    width: 100%;
+    padding-left: 0;
+    text-align: center;;
+  }
+
+  #nav-right {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+
+  #text-container:not(.small):not(.join) {
+    height: 65vh;
+  }
+
+  #description-container:not(.small) {
+    height: 35vh;
+    margin-top: 65vh;
+  }
+
+  
+  #text, #description {
+    font-size: 2.5em;
+    width: 85%;
+    margin-top: 0;
+  }
+
+  .small {
+    align-items: flex-end;
+    font-size: 0.75em !important;
+  }
+
+  img {
+    max-width: 90% !important;
+  }
+  
+  .holder {
+    height: 88vh;
+    padding-top: 6vh;
+    overflow: scroll;
+  }
 }

@@ -22,6 +22,18 @@ $('#show-web').click(showWeb);
 $('#show-transcript').click(showTranscript);
 $('#show-credits').click(showCredits);
 
+function resize() {
+  let aspect = window.innerWidth/window.innerHeight;
+  console.log(aspect)
+  if (aspect < 0.5) {
+    $('#chap0').text('Mar');
+    $('#chap1').text('Jun');
+    $('#chap2').text('Sep');
+    $('#chap3').text('Dec');
+    $('#chap4').text('Jul');
+
+  }
+}
 
 function restart() {
   ended = false;
@@ -29,6 +41,7 @@ function restart() {
   reset();
   $('body').css('background', chapters[chapters.length-1].background);
   chap = -1;
+  $('#text-container').addClass('join');
   $('#start').show();
   $('.info').show();
   $('#nav-right').css('display', 'none');
@@ -36,6 +49,8 @@ function restart() {
 }
 
 function start() {
+  resize();
+  $('#text-container').removeClass('join');
   $('#start').hide();
   $('.info').hide();
   $('#nav-right').css('display', 'inline-block');
