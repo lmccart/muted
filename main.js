@@ -3,6 +3,11 @@ let captionsOn = true;
 let fadeTimeout;
 let ended = false;
 
+resize();
+window.addEventListener('resize', () => {
+  resize();
+});
+
 $('#start').on('click', start);
 $('#prev').on('click', playPrev);
 $('#next').on('click', playNext);
@@ -21,11 +26,20 @@ $('#audio')[0].addEventListener('ended', () => {
 $('#show-web').click(showWeb);
 $('#show-transcript').click(showTranscript);
 $('#show-credits').click(showCredits);
+$('body').keypress(e => {
+  if (e.key === 'p') {
+    $('#audio')[0].pause();
+  } else if (e.key === 'P') {
+    $('#audio')[0].play();
+  }
+});
 
 function resize() {
+  let vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty('--vh', `${vh}px`);
+
   let aspect = window.innerWidth/window.innerHeight;
-  console.log(aspect)
-  if (aspect < 0.5) {
+  if (aspect < 0.5 || window.innerWidth < 400) {
     $('#chap0').text('Mar');
     $('#chap1').text('Jun');
     $('#chap2').text('Sep');
@@ -49,7 +63,6 @@ function restart() {
 }
 
 function start() {
-  resize();
   $('#text-container').removeClass('join');
   $('#start').hide();
   $('.info').hide();
@@ -136,7 +149,7 @@ function updateNav() {
 
 function checkCues(e) {
   if (chap < 0) return;
-  let t = e.path[0].currentTime;
+  let t = e.target.currentTime;
   let cues = chapters[chap].transcript;
   for (let c of cues) {
     if (t >= c[0] && !c[4]) {

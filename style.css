@@ -7,7 +7,7 @@ body {
 }
 
 h1, h2, body, p, a, button {
-  font-size: 2vh;
+  font-size: 24px;
 }
 
 #text, #description, #start {
@@ -35,8 +35,8 @@ h1, h2, body, p, a, button {
 }
 
 section {
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -98,7 +98,7 @@ button:hover, #start:hover {
 
 .text-button {
   opacity: 0.5;
-  margin-left: 0.5em;
+  /* margin-left: 0.5em; */
 }
 
 .text-button.on, .text-button:hover {
@@ -114,41 +114,46 @@ img {
 
 #text {
   color: white;
-  width: 60%;
+  width: 75%;
   display: none;
   text-align: center;
 }
 
 #description-container {
   z-index: -1;
+  height: 30vh;
+  margin-top: 70vh;
+  background: pink;
 }
 
 #description {
-  margin-top: 10em;
   color: rgb(255, 255, 205);
   font-style: italic;
   width: 60%;
   text-align: center;
 }
 
+.small #text {
+  margin-bottom: 1.5em;
+}
+.small #description {
+  margin-top: 1.5em;
+}
+
+#text-container {
+  background: rgba(255, 255, 0, 0.2);
+}
 #text-container.small {
   align-items: flex-end;
   font-size: 0.5em;
 }
 
-.small #text {
-  margin-bottom: 2em;
-}
-
 #description-container.small {
   align-items: flex-start;
   font-size: 0.5em;
-
+  margin-top: 0;
 }
 
-.small #description {
-  margin-top: 2em;
-}
 
 .white-fade {
   animation: white-fade-anim 70s;
@@ -195,10 +200,11 @@ p {
   background: #008cff;
   color: white;
   display: none;
+  height: 100%;
 }
 
 .holder{
-  height: 100vh;
+  height: 100%;
   padding-top: 8em;
   overflow: scroll;
 }
@@ -225,6 +231,7 @@ p {
   color: white;
   overflow: scroll;
   display: none;
+  height: 100%;
 }
 
 #credits-container .block {
@@ -296,9 +303,22 @@ p {
 	}
 }
 
+@media only screen and (max-width: 1440px) and (min-width: 1025px) {
+
+  h1, h2, body, p, a, button {
+    font-size: 20px;
+  }
+
+}
+
 @media only screen and (max-width: 1024px) and (min-width: 601px) {
-  .chap-button {
-    padding: 5px;
+
+  h1, h2, body, p, a, button {
+    font-size: 16px;
+  }
+
+  .chap-button, .text-button {
+    padding: 10px;
   }
 
   nav {
@@ -320,23 +340,25 @@ p {
 
   #text-container:not(.small):not(.join) {
     height: 60vh;
+    height: calc(var(--vh, 1vh) * 60);
   }
 
   #description-container:not(.small) {
     height: 40vh;
+    height: calc(var(--vh, 1vh) * 40);
     margin-top: 60vh;
+    margin-top: calc(var(--vh, 1vh) * 60);
   }
 
   
   #text, #description {
     font-size: 2.5em;
-    width: 75%;
     margin-top: 0;
   }
 
   .small {
     align-items: flex-end;
-    font-size: 0.75em !important;
+    font-size: 0.65em !important;
   }
 
   img {
@@ -347,8 +369,17 @@ p {
 
 @media only screen and (max-width: 600px) {
 
-  .chap-button {
-    padding: 5px;
+  h1, h2, body, p, a, button {
+    font-size: 12px;
+  }
+
+  section {
+    width: 100%;
+    height: calc(100%);
+  }
+
+  .chap-button, .text-button {
+    padding: 10px;
   }
 
   nav {
@@ -369,12 +400,17 @@ p {
   }
 
   #text-container:not(.small):not(.join) {
-    height: 65vh;
+    margin-top: 8vh;
+    margin-top: calc(var(--vh, 1vh) * 8);
+    height: 60vh;
+    height: calc(var(--vh, 1vh) * 60);
   }
 
   #description-container:not(.small) {
-    height: 35vh;
-    margin-top: 65vh;
+    height: 24vh;
+    height: calc(var(--vh, 1vh) * 24);
+    margin-top: 68vh;
+    margin-top: calc(var(--vh, 1vh) * 68);
   }
 
   
@@ -388,14 +424,20 @@ p {
     align-items: flex-end;
     font-size: 0.75em !important;
   }
+  .small #text {
+    margin-bottom: 2.5em;
+  }
+  .small #description {
+    margin-top: 2.5em;
+  }
 
   img {
     max-width: 90% !important;
   }
   
   .holder {
-    height: 88vh;
-    padding-top: 6vh;
+    height: 88%;
+    padding-top: 6%;
     overflow: scroll;
   }
 }
