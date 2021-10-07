@@ -123,7 +123,6 @@ img {
   z-index: -1;
   height: 30vh;
   margin-top: 70vh;
-  background: pink;
 }
 
 #description {
@@ -140,9 +139,6 @@ img {
   margin-top: 1.5em;
 }
 
-#text-container {
-  background: rgba(255, 255, 0, 0.2);
-}
 #text-container.small {
   align-items: flex-end;
   font-size: 0.5em;
@@ -308,7 +304,6 @@ p {
   h1, h2, body, p, a, button {
     font-size: 20px;
   }
-
 }
 
 @media only screen and (max-width: 1024px) and (min-width: 601px) {
@@ -363,6 +358,13 @@ p {
 
   img {
     max-width: 90% !important;
+  }
+  .holder {
+    height: 88vh;
+    height: calc(var(--vh, 1vh) * 88);
+    padding-top: 6vh;
+    padding-top: calc(var(--vh, 1vh) * 6);
+    overflow: scroll;
   }
 
 }
@@ -436,8 +438,10 @@ p {
   }
   
   .holder {
-    height: 88%;
-    padding-top: 6%;
+    height: 88vh;
+    height: calc(var(--vh, 1vh) * 88);
+    padding-top: 6vh;
+    padding-top: calc(var(--vh, 1vh) * 6);
     overflow: scroll;
   }
 }
