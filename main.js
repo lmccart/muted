@@ -95,7 +95,7 @@ function playNext() {
 }
 
 function reset() {
-  $('#audio')[0].pause();
+  pause();
   $('#image').hide();
   $('#text').hide();
   $('#description').hide();
@@ -230,29 +230,29 @@ function displayImage() {
 
 
 function showNav() {
-  $('nav').stop(true, true).fadeIn(300);
+  $('#main-nav').stop(true, true).fadeTo(300, 1.0);
   if (fadeTimeout) clearTimeout(fadeTimeout);
   if ($('#web-container').is(':visible')) {
     fadeTimeout = setTimeout(() => {
-      $('nav').stop(true, true).fadeOut(300);
+      $('#main-nav').stop(true, true).fadeTo(300, 0.1);
     }, 2000);
   }
 }
 
 function play() {
   $('#audio')[0].play();
-  $('#show-web').text('Pause');
+  // $('#show-web').text('Pause');
 }
 function pause() {
   $('#audio')[0].pause();
-  $('#show-web').text('Play');
+  // $('#show-web').text('Play');
 }
 
 function showWeb() {
   if (ended) restart();
   else {
     console.log($('#show-web').text())
-    if ($('#show-web').text() === 'Play') {
+    // if ($('#show-web').text() === 'Play') {
       play();
       $('#web-container').css('display', 'flex');
       $('#transcript-container').hide();
@@ -261,9 +261,9 @@ function showWeb() {
       $('.text-button').removeClass('current');
       $('#show-web').addClass('current');
       $('#text, nav, .chap-button, .text-button, .arrow-button').css('color', chapters[chap].color);
-    } else {
-      pause();
-    }
+    // } else {
+    //   pause();
+    // }
   }
 }
 

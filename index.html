@@ -22,23 +22,23 @@
   </head>
   <body>
     <a href='#main' class='sr-only'>skip to main</a>
-    <nav>
+    <nav id='main-nav'>
       <div id='nav-left' style='display:none'>
         <div id='chap-buttons'>
-          <button id='prev' class='arrow-button'>←</button>
-          <button id='chap0' class='chap-button'>March</button>
-          <button id='chap1' class='chap-button'>June</button>
-          <button id='chap2' class='chap-button'>September</button>
-          <button id='chap3' class='chap-button'>December</button>
-          <button id='chap4' class='chap-button'>July</button>
-          <button id='next' class='arrow-button'>→</button>
+          <button id='prev' class='arrow-button' onclick='this.blur();'>←</button>
+          <button id='chap0' class='chap-button' onclick='this.blur();'>March</button>
+          <button id='chap1' class='chap-button' onclick='this.blur();'>June</button>
+          <button id='chap2' class='chap-button' onclick='this.blur();'>September</button>
+          <button id='chap3' class='chap-button' onclick='this.blur();'>December</button>
+          <button id='chap4' class='chap-button' onclick='this.blur();'>July</button>
+          <button id='next' class='arrow-button' onclick='this.blur();'>→</button>
         </div>
       </div>
       <div id='nav-right' style='display:none'>
-        <button id='show-web' class='text-button current'>Play</button>
-        <button id='show-transcript' class='text-button'>Text</button>
-        <a id='show-audio' class='text-button' href='https://soundcloud.com/lauren-mccarthy-437343893/sets/muted' target='_blank'>Audio</a>
-        <button id='show-credits' class='text-button'>Credits</button>
+        <button id='show-web' class='text-button current' onclick='this.blur();'>Play</button>
+        <button id='show-transcript' class='text-button' onclick='this.blur();'>Text</button>
+        <a id='show-audio' class='text-button' href='https://soundcloud.com/lauren-mccarthy-437343893/sets/muted' target='_blank' onclick='this.blur();'>Audio</a>
+        <button id='show-credits' class='text-button' onclick='this.blur();'>Credits</button>
       </div>
     </nav>
     <main id='main'>
