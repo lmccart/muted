@@ -26,13 +26,13 @@ $('#audio')[0].addEventListener('ended', () => {
 $('#show-web').click(showWeb);
 $('#show-transcript').click(showTranscript);
 $('#show-credits').click(showCredits);
-$('body').keypress(e => {
-  if (e.key === 'p') {
-    $('#audio')[0].pause();
-  } else if (e.key === 'P') {
-    $('#audio')[0].play();
-  }
-});
+// $('body').keypress(e => {
+//   if (e.key === 'p') {
+//     $('#audio')[0].pause();
+//   } else if (e.key === 'P') {
+//     $('#audio')[0].play();
+//   }
+// });
 
 function resize() {
   let vh = window.innerHeight * 0.01;
@@ -129,7 +129,7 @@ function playChapter(n) {
     $('#image').css('opacity', 0);
   }
   $('#audio').attr('src', chapters[chap].audio);
-  $('#audio')[0].play();
+  play();
 
   if (chap === 4) {
     $('body').addClass('white-fade');
@@ -239,22 +239,36 @@ function showNav() {
   }
 }
 
+function play() {
+  $('#audio')[0].play();
+  $('#show-web').text('Pause');
+}
+function pause() {
+  $('#audio')[0].pause();
+  $('#show-web').text('Play');
+}
+
 function showWeb() {
   if (ended) restart();
   else {
-    $('#audio')[0].play();
-    $('#web-container').css('display', 'flex');
-    $('#transcript-container').hide();
-    $('#credits-container').hide();
-    $('#nav-left').show();
-    $('.text-button').removeClass('current');
-    $('#show-web').addClass('current');
-    $('#text, nav, .chap-button, .text-button, .arrow-button').css('color', chapters[chap].color);
+    console.log($('#show-web').text())
+    if ($('#show-web').text() === 'Play') {
+      play();
+      $('#web-container').css('display', 'flex');
+      $('#transcript-container').hide();
+      $('#credits-container').hide();
+      $('#nav-left').show();
+      $('.text-button').removeClass('current');
+      $('#show-web').addClass('current');
+      $('#text, nav, .chap-button, .text-button, .arrow-button').css('color', chapters[chap].color);
+    } else {
+      pause();
+    }
   }
 }
 
 function showTranscript() {
-  $('#audio')[0].pause();
+  pause();
   $('#web-container').hide();
   $('#transcript-container').css('display', 'block');
   $('#credits-container').hide();
@@ -265,7 +279,7 @@ function showTranscript() {
 }
 
 function showCredits() {
-  $('#audio')[0].pause();
+  pause();
   $('#web-container').hide();
   $('#transcript-container').hide();
   $('#credits-container').css('display', 'block');
