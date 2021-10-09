@@ -26,13 +26,13 @@ $('#audio')[0].addEventListener('ended', () => {
 $('#show-web').click(showWeb);
 $('#show-transcript').click(showTranscript);
 $('#show-credits').click(showCredits);
-// $('body').keypress(e => {
-//   if (e.key === 'p') {
-//     $('#audio')[0].pause();
-//   } else if (e.key === 'P') {
-//     $('#audio')[0].play();
-//   }
-// });
+$('body').keypress(e => {
+  if (e.key === 'p') {
+    $('#audio')[0].pause();
+  } else if (e.key === 'P') {
+    $('#audio')[0].play();
+  }
+});
 
 function resize() {
   let vh = window.innerHeight * 0.01;
@@ -234,7 +234,7 @@ function showNav() {
   if (fadeTimeout) clearTimeout(fadeTimeout);
   if ($('#web-container').is(':visible')) {
     fadeTimeout = setTimeout(() => {
-      $('#main-nav').stop(true, true).fadeTo(300, 0.1);
+      $('#main-nav').stop(true, true).fadeTo(300, 0.001);
     }, 2000);
   }
 }
