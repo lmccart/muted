@@ -6,6 +6,7 @@ $(document).ready(() => {
   $(window).on('load', load);
   $('#instruct').on('click touchstart', restart);
   $('#video').on('ended', load);
+  $('#audio').on('ended', load);
 
 });
 
@@ -17,6 +18,7 @@ function restart() {
   console.log('restart');
   if (audio) {
     if (audio.paused) {
+      $('#instruct').hide();
       audio.play();
     } else {
       audio.currentTime = 0
