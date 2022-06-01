@@ -66,6 +66,15 @@ body {
   color: black;
 }
 
+#image-container {
+  background: black;
+}
+
+img {
+  width: 100vw;
+  display: none;
+}
+
 
 @font-face {
   font-family: 'DriveMono';

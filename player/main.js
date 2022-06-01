@@ -7,6 +7,7 @@ $(document).ready(() => {
   $('#instruct').on('click touchstart', restart);
   $('#video').on('ended', load);
   $('#audio').on('ended', load);
+  $('#audio').on('timeupdate', updateAudio);
 
 });
 
@@ -39,4 +40,20 @@ function restart() {
       });
     }
   }
+}
+
+function updateAudio(e) {
+  let t = e.target.currentTime;
+  if (t < 45) {
+    showImage(0);
+  } else if (t < 90) {
+    showImage(1);
+  } else {
+    showImage(2);
+  }
+}
+
+function showImage(n) {
+  $('img').hide();
+  $(`#img${n}`).show();
 }
