@@ -3,8 +3,8 @@ let audio = document.querySelector('#audio');
 let video = document.querySelector('#video');
 
 $(document).ready(() => {
-  $(window).on('click touchstart', restart);
   $(window).on('load', load);
+  $('#instruct').on('click touchstart', restart);
   $('#video').on('ended', load);
 
 });
