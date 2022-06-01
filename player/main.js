@@ -2,10 +2,12 @@ let button = document.querySelector('#button');
 let audio = document.querySelector('#audio');
 let video = document.querySelector('#video');
 
-$(window).on('click', restart);
-$(window).on('load', load);
-$('#video').on('ended', load);
+$(document).ready(() => {
+  $(window).on('click touchstart', restart);
+  $(window).on('load', load);
+  $('#video').on('ended', load);
 
+});
 
 function load() {
   $('#instruct').show();
